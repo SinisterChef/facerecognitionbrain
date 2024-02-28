@@ -53,9 +53,13 @@ const particleOptions = {
 //Get particales working in class
 class App extends Component {
     constructor(props) {
+        //to be able to use this we call super
       super(props);
+      //define states of everything, they can be anything
+      //these are event listeners now, and their isnital state is set here
       this.state = {
-        init: false
+        init: false,
+        input: ''
       };
     }
   
@@ -65,6 +69,12 @@ class App extends Component {
       }).then(() => {
         this.setState({ init: true });
       });
+    }
+
+    //gets called on an event so it gets passed the event
+    //well put this as a prop on the imagelinkform
+    onInputChange = (event) => {
+        console.log(event.target.value);
     }
   
     particlesLoaded(container) {
@@ -78,7 +88,7 @@ class App extends Component {
           <Navigation />
           <Logo />
           <Rank />
-          <ImageLinkForm />
+          <ImageLinkForm onInputChange={this.onInputChange}/>
           {/* <FaceRecognition /> */}
         </div>
       );
