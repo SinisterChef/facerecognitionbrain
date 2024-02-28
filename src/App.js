@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
+import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
@@ -76,9 +77,10 @@ class App extends Component {
     onInputChange = (event) => {
         console.log(event.target.value);
     }
-  
-    particlesLoaded(container) {
-      console.log(container);
+
+
+    onButtonSubmit = () => {
+        console.log('click');
     }
   
     render() {
@@ -88,8 +90,8 @@ class App extends Component {
           <Navigation />
           <Logo />
           <Rank />
-          <ImageLinkForm onInputChange={this.onInputChange}/>
-          {/* <FaceRecognition /> */}
+          <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
+          <FaceRecognition />
         </div>
       );
     }
