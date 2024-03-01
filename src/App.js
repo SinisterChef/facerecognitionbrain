@@ -58,9 +58,13 @@ class App extends Component {
       super(props);
       //define states of everything, they can be anything
       //these are event listeners now, and their isnital state is set here
+      //state is an object in react, we define and add variagbles to these states that are set as listners
+      //we update the items with this.setState({state_name: value})
+      //We can access these states any time with the this.state.state_name
       this.state = {
         init: false,
-        input: ''
+        input: '',
+        imageUrl: ''
       };
     }
   
@@ -75,12 +79,12 @@ class App extends Component {
     //gets called on an event so it gets passed the event
     //well put this as a prop on the imagelinkform
     onInputChange = (event) => {
-        console.log(event.target.value);
+        this.setState({input: event.target.value});
     }
 
 
     onButtonSubmit = () => {
-        console.log('click');
+       this.setState({imageUrl: this.state.input })
     }
   
     render() {
@@ -90,8 +94,11 @@ class App extends Component {
           <Navigation />
           <Logo />
           <Rank />
-          <ImageLinkForm onInputChange={this.onInputChange} onButtonSubmit={this.onButtonSubmit} />
-          <FaceRecognition />
+          <ImageLinkForm
+           onInputChange={this.onInputChange} 
+           onButtonSubmit={this.onButtonSubmit} 
+           />
+          <FaceRecognition imageUrl={this.state.imageUrl} />
         </div>
       );
     }
