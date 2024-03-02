@@ -87,6 +87,7 @@ class App extends Component {
        this.setState({imageUrl: this.state.input })
     }
   
+    //https://petapixel.com/assets/uploads/2011/02/averagefaces.jpg
     render() {
       return (
         <div className="App">
