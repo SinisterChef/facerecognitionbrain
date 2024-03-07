@@ -64,8 +64,24 @@ class App extends Component {
       this.state = {
         init: false,
         input: '',
-        imageUrl: ''
+        imageUrl: '',
+        box: {}
       };
+    }
+
+
+
+    calculateFaceLocation = (data) => {
+      // const clarifaiFace = data;
+      // const image = document.getElementById('inputImage');
+      // const width = Number(image.width);
+      // const height = Number(image.height);
+      // console.log(width, height);
+      console.log('Is this getting called?');
+    }
+
+    displayFaceBox = (box) => {
+      this.setState({box: box})
     }
   
     componentDidMount() {
@@ -83,7 +99,7 @@ class App extends Component {
     }
 
     onButtonSubmit = () => {
-       this.setState({imageUrl: this.state.input })
+       this.setState({ imageUrl: this.state.input })
     }
   
     //https://petapixel.com/assets/uploads/2011/02/averagefaces.jpg
@@ -98,7 +114,8 @@ class App extends Component {
            onInputChange={this.onInputChange} 
            onButtonSubmit={this.onButtonSubmit} 
            />
-          <FaceRecognition imageUrl={this.state.imageUrl} />
+          <FaceRecognition
+          imageUrl={this.state.imageUrl} />
         </div>
       );
     }

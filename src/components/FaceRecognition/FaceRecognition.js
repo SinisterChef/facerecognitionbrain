@@ -1,8 +1,10 @@
 import React from 'react';
+import './FaceRecognition.css';
 
 
 const FaceRecognition = ({ imageUrl }) => {
     const imageURL = {imageUrl};
+    const outlineCoords = [];
     //console.log(imageURL.imageUrl)
 
 
@@ -47,12 +49,20 @@ const requestOptions = {
     body: raw
 };
 
-
 // NOTE: MODEL_VERSION_ID is optional, you can also call prediction with the MODEL_ID only
 // https://api.clarifai.com/v2/models/{YOUR_MODEL_ID}/outputs
 // this will default to the latest version_id
 
-fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
+//pre-rendering image and doing some simple math to get the correct deminsions so we can do the math to place the BBox properly without passing parent/child data in react
+const img = new Image();
+img.src = imageUrl;
+img.onload = () => {
+    const aspectRatio = img.width / img.height;
+    img.width = 500;
+    img.height = img.width / aspectRatio;
+    console.log(img.width, img.height)
+
+    fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
     .then(response => response.json())
     .then(result => {
 
@@ -66,26 +76,48 @@ fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VE
             const bottomRow = boundingBox.bottom_row.toFixed(3);
             const rightCol = boundingBox.right_col.toFixed(3);
 
-            region.data.concepts.forEach(concept => {
+            region.data.concepts.forEach((concept, index) => {
                 // Accessing and rounding the concept value
                 const name = concept.name;
                 const value = concept.value.toFixed(4);
 
                 console.log(`${name}: ${value} BBox: ${topRow}, ${leftCol}, ${bottomRow}, ${rightCol}`);
-                
+                const outlineCoord = {
+                    leftCol: leftCol * img.width,
+                    topRow: topRow * img.height,
+                    rightCol: img.width - (rightCol * img.width),
+                    bottomRow: img.height - (bottomRow * img.height)
+                }
+                outlineCoords.push(outlineCoord);
             });
-        });
 
+        });
     })
     .catch(error => console.log('error', error));
-
-
+}
+console.log(outlineCoords);
 
     return (
         <div className='center'>
-            <img alt='faces' src={imageUrl} />
+            <img width='500px' height='auto' id='inputImage' alt='faces' src={imageUrl} />
+           
+            {outlineCoords.map((coord, index) => (
+                 console.log('in'),
+            <div 
+                key={index} 
+                className='bounding-box' 
+                style={{
+                    top: coord.topRow,
+                    right: coord.rightCol,
+                    left: coord.leftCol,
+                    bottom: coord.bottomRow
+                }}
+            ></div>
+        ))}
+
         </div>
     )
+            
 }
 
 
