@@ -3,105 +3,14 @@ import './FaceRecognition.css';
 
 
 const FaceRecognition = ({ imageUrl }) => {
-    const imageURL = {imageUrl};
-    const outlineCoords = [];
-    //console.log(imageURL.imageUrl)
-
-
-// Your PAT (Personal Access Token) can be found in the portal under Authentification
-const PAT = '5d74e64a813e4adcbced4e119706b229';
-// Specify the correct user_id/app_id pairings
-// Since you're making inferences outside your app's scope
-const USER_ID = '7u5tuh27v9pc1';       
-const APP_ID = 'my-first-application-urznkk';
-// Change these to whatever model and image URL you want to use
-const MODEL_ID = 'face-detection';
-const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105';    
-const IMAGE_URL = imageURL.imageUrl;
-
-///////////////////////////////////////////////////////////////////////////////////
-// YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE TO RUN THIS EXAMPLE
-///////////////////////////////////////////////////////////////////////////////////
-
-const raw = JSON.stringify({
-    "user_app_id": {
-        "user_id": USER_ID,
-        "app_id": APP_ID
-    },
-    "inputs": [
-        {
-            "data": {
-                "image": {
-                    "url": IMAGE_URL
-                    // "base64": IMAGE_BYTES_STRING
-                }
-            }
-        }
-    ]
-});
-
-const requestOptions = {
-    method: 'POST',
-    headers: {
-        'Accept': 'application/json',
-        'Authorization': 'Key ' + PAT
-    },
-    body: raw
-};
-
-// NOTE: MODEL_VERSION_ID is optional, you can also call prediction with the MODEL_ID only
-// https://api.clarifai.com/v2/models/{YOUR_MODEL_ID}/outputs
-// this will default to the latest version_id
-
-//pre-rendering image and doing some simple math to get the correct deminsions so we can do the math to place the BBox properly without passing parent/child data in react
-const img = new Image();
-img.src = imageUrl;
-img.onload = () => {
-    const aspectRatio = img.width / img.height;
-    img.width = 500;
-    img.height = img.width / aspectRatio;
-    console.log(img.width, img.height)
-
-    fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
-    .then(response => response.json())
-    .then(result => {
-
-        const regions = result.outputs[0].data.regions;
-
-        regions.forEach(region => {
-            // Accessing and rounding the bounding box values
-            const boundingBox = region.region_info.bounding_box;
-            const topRow = boundingBox.top_row.toFixed(3);
-            const leftCol = boundingBox.left_col.toFixed(3);
-            const bottomRow = boundingBox.bottom_row.toFixed(3);
-            const rightCol = boundingBox.right_col.toFixed(3);
-
-            region.data.concepts.forEach((concept, index) => {
-                // Accessing and rounding the concept value
-                const name = concept.name;
-                const value = concept.value.toFixed(4);
-
-                console.log(`${name}: ${value} BBox: ${topRow}, ${leftCol}, ${bottomRow}, ${rightCol}`);
-                const outlineCoord = {
-                    leftCol: leftCol * img.width,
-                    topRow: topRow * img.height,
-                    rightCol: img.width - (rightCol * img.width),
-                    bottomRow: img.height - (bottomRow * img.height)
-                }
-                outlineCoords.push(outlineCoord);
-            });
-
-        });
-    })
-    .catch(error => console.log('error', error));
-}
-console.log(outlineCoords);
+    // const imageURL = {imageUrl};
+    // const outlineCoords = [];
 
     return (
         <div className='center'>
             <img width='500px' height='auto' id='inputImage' alt='faces' src={imageUrl} />
            
-            {outlineCoords.map((coord, index) => (
+            {/* {outlineCoords.map((coord, index) => (
                  console.log('in'),
             <div 
                 key={index} 
@@ -113,12 +22,11 @@ console.log(outlineCoords);
                     bottom: coord.bottomRow
                 }}
             ></div>
-        ))}
+        ))} */}
 
         </div>
     )
             
 }
-
 
 export default FaceRecognition;

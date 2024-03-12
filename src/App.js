@@ -50,6 +50,47 @@ const particleOptions = {
   detectRetina: true,
 }
 
+const returnClarifaiRequestOptions = (imageURL) => {
+    //Your PAT (Personal Access Token) can be found in the portal under Authentification
+    const PAT = '5d74e64a813e4adcbced4e119706b229';
+    // Specify the correct user_id/app_id pairings
+    // Since you're making inferences outside your app's scope
+    const USER_ID = '7u5tuh27v9pc1';       
+    const APP_ID = 'my-first-application-urznkk';
+    // Change these to whatever model and image URL you want to use
+    //const MODEL_ID = 'face-detection';
+    //const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105';    
+    const IMAGE_URL = imageURL.imageUrl;
+
+    const raw = JSON.stringify({
+    "user_app_id": {
+        "user_id": USER_ID,
+        "app_id": APP_ID
+    },
+    "inputs": [
+        {
+            "data": {
+                "image": {
+                    "url": IMAGE_URL
+                    // "base64": IMAGE_BYTES_STRING
+                }
+            }
+        }
+    ]
+});
+
+const requestOptions = {
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Authorization': 'Key ' + PAT
+    },
+    body: raw
+};
+
+return requestOptions
+}
+
 //class is defined with a lowercase c
 //Get particales working in class
 class App extends Component {
@@ -69,16 +110,14 @@ class App extends Component {
       };
     }
 
-
-
-    calculateFaceLocation = (data) => {
-      // const clarifaiFace = data;
-      // const image = document.getElementById('inputImage');
-      // const width = Number(image.width);
-      // const height = Number(image.height);
-      // console.log(width, height);
-      console.log('Is this getting called?');
-    }
+    // calculateFaceLocation = (data) => {
+    //   // const clarifaiFace = data;
+    //   // const image = document.getElementById('inputImage');
+    //   // const width = Number(image.width);
+    //   // const height = Number(image.height);
+    //   // console.log(width, height);
+    //   console.log('Is this getting called?');
+    // }
 
     displayFaceBox = (box) => {
       this.setState({box: box})
@@ -95,13 +134,44 @@ class App extends Component {
     //gets called on an event so it gets passed the event
     //well put this as a prop on the imagelinkform
     onInputChange = (event) => {
-        this.setState({input: event.target.value});
+        this.setState({ input: event.target.value });
     }
 
+    //Image Call = This is where imgeURL is called and sent to the compontent this is where the API call needs to be set also
     onButtonSubmit = () => {
        this.setState({ imageUrl: this.state.input })
+
+      //put the validation script into a function and then call the script 
+      const requestOptions = returnClarifaiRequestOptions(this.state.input);
+
+       fetch("https://api.clarifai.com/v2/models/" + "face-detection" + "/versions/" + "6dc7e46bc9124c5c8824be4822abe105" + "/outputs", requestOptions)
+       .then(response => response.json())
+       .then(result => {
+   
+           const regions = result.outputs[0].data.regions;
+   
+           regions.forEach(region => {
+               // Accessing and rounding the bounding box values
+               const boundingBox = region.region_info.bounding_box;
+               const topRow = boundingBox.top_row.toFixed(3);
+               const leftCol = boundingBox.left_col.toFixed(3);
+               const bottomRow = boundingBox.bottom_row.toFixed(3);
+               const rightCol = boundingBox.right_col.toFixed(3);
+   
+               region.data.concepts.forEach(concept => {
+                   // Accessing and rounding the concept value
+                   const name = concept.name;
+                   const value = concept.value.toFixed(4);
+   
+                   console.log(`${name}: ${value} BBox: ${topRow}, ${leftCol}, ${bottomRow}, ${rightCol}`);
+                   
+               });
+           });
+   
+       })
+       .catch(error => console.log('error', error));
     }
-  
+
     //https://petapixel.com/assets/uploads/2011/02/averagefaces.jpg
     render() {
       return (
