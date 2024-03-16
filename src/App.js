@@ -127,7 +127,7 @@ class App extends Component {
     }
 
     displayFaceBox = (box) => {
-      console.log(box);
+      //console.log(box);
       this.setState({box: box})
     }
   
@@ -182,6 +182,7 @@ class App extends Component {
 
     //https://petapixel.com/assets/uploads/2011/02/averagefaces.jpg
     //https://i.pinimg.com/736x/35/29/83/352983c7917b84e29b6c3e0e5e452ef0.jpg
+    //https://www.linkedin.com/pulse/detect-multiple-faces-using-clarifai-react-asfand-yar-aftab/
     render() {
       return (
         <div className="App">

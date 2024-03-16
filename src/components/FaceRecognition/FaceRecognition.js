@@ -5,7 +5,7 @@ import './FaceRecognition.css';
 const FaceRecognition = ({ imageUrl, box }) => {
     // const imageURL = {imageUrl};
     // const outlineCoords = [];
-
+    console.log({box});
     return (
         <div className='center ma'>
             <div className='absolute mt2'>
