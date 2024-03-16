@@ -3,31 +3,29 @@ import './FaceRecognition.css';
 
 
 const FaceRecognition = ({ imageUrl, box }) => {
-    // const imageURL = {imageUrl};
-    // const outlineCoords = [];
-    //console.log({box});
     return (
         <div className='center ma'>
-            <div className='absolute mt2'>
-            <img width='500px' height='auto' id='inputImage' alt='faces' src={imageUrl} />
-            <div className='bounding-box' style={{left: box.leftCol, top: box.topRow, right: box.rightCol, bottom: box.bottomRow}}></div>
-            {/* {outlineCoords.map((coord, index) => (
-                 console.log('in'),
-            <div 
-                key={index} 
-                className='bounding-box' 
-                style={{
-                    top: coord.topRow,
-                    right: coord.rightCol,
-                    left: coord.leftCol,
-                    bottom: coord.bottomRow
-                }}
+            <div className='relative mt2'>
+            <img id='inputImage' src={imageUrl} />
+            {box ? (
+            box.map((item) => (
+            <div
+              key={item.bottomRow}
+              className='bounding-box'
+              style={{
+                top: item.top_row,
+                right: item.right_col,
+                bottom: item.bottom_row,
+                left: item.left_col,
+              }}
             ></div>
-        ))} */}
+          ))
+        ) : (
+          <div></div>
+        )}
             </div>
         </div>
-    )
-            
+    )           
 }
 
 export default FaceRecognition;

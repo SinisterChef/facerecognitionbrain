@@ -51,13 +51,9 @@ const particleOptions = {
 }
 
 const returnClarifaiRequestOptions = (imageURL) => {
-    //Your PAT (Personal Access Token) can be found in the portal under Authentification
     const PAT = '5d74e64a813e4adcbced4e119706b229';
-    // Specify the correct user_id/app_id pairings
-    // Since you're making inferences outside your app's scope
     const USER_ID = '7u5tuh27v9pc1';       
     const APP_ID = 'my-first-application-urznkk';
-    //Change these to whatever model and image URL you want to use
     //const MODEL_ID = 'face-detection';
     //const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105';    
     const IMAGE_URL = imageURL;
@@ -93,16 +89,9 @@ return requestOptions
 }
 
 //class is defined with a lowercase c
-//Get particales working in class
 class App extends Component {
     constructor(props) {
-        //to be able to use this we call super
       super(props);
-      //define states of everything, they can be anything
-      //these are event listeners now, and their isnital state is set here
-      //state is an object in react, we define and add variagbles to these states that are set as listners
-      //we update the items with this.setState({state_name: value})
-      //We can access these states any time with the this.state.state_name
       this.state = {
         init: false,
         input: '',
@@ -112,36 +101,19 @@ class App extends Component {
     }
 
     calculateFaceLocation = (data) => {
-      console.log(data);
       const image = document.getElementById('inputImage');
-      let result = [];
-      if (Array.isArray(data)) {
-        data.forEach((item) => {
-          result.push(item.region_info.bounding_box);
-        });
-      } else {
-        this.setState((prev) => ({
-          ...prev,
-          hasError: true,
-        }));
-      }
-      let box = [];
       const width = Number(image.width);
       const height = Number(image.height);
-      result.forEach((item) => {
-        box.push({
-          leftCol: item.left_col * width,
-          topRow: item.top_row * height,
-          rightCol: width - item.right_col * width,
-          bottomRow: height - item.bottom_row * height,
-        });
+      data.forEach((item) => {
+          item.left_col = item.left_col * width
+          item.top_row = item.top_row * height
+          item.right_col = width - item.right_col * width
+          item.bottom_row = height - item.bottom_row * height
       });
-      //console.log(width, height);
-      return box;
+      return data;
     };
 
     displayFaceBox = (box) => {
-      //console.log(box);
       this.setState({box: box})
     }
   
@@ -168,28 +140,13 @@ class App extends Component {
        .then(result => {
    
            const regions = result.outputs[0].data.regions;
-   
+           let box = [];
            regions.forEach(region => {
                // Accessing and rounding the bounding box values
                const boundingBox = region.region_info.bounding_box;
-               const topRow = boundingBox.top_row.toFixed(3);
-               const leftCol = boundingBox.left_col.toFixed(3);
-               const bottomRow = boundingBox.bottom_row.toFixed(3);
-               const rightCol = boundingBox.right_col.toFixed(3);
-               this.displayFaceBox((this.calculateFaceLocation(boundingBox)));
-               //console.log(this.calculateFaceLocation(boundingBox));
-               
-   
-               region.data.concepts.forEach(concept => {
-                   // Accessing and rounding the concept value
-                   const name = concept.name;
-                   const value = concept.value.toFixed(4);  
-   
-                   //console.log(`${name}: ${value} BBox: ${topRow}, ${leftCol}, ${bottomRow}, ${rightCol}`);
-                   
-               });
+               box.push(boundingBox);
            });
-   
+           this.displayFaceBox((this.calculateFaceLocation(box)));
        })
        .catch(error => console.log('error', error));
     }
