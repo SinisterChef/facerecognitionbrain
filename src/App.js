@@ -115,9 +115,9 @@ class App extends Component {
       const clarifaiFace = data;
       const image = document.getElementById('inputImage');
       const width = Number(image.width);
-      console.log(width);
+      //console.log(width);
       const height = Number(image.height);
-      console.log(height);
+      //console.log(height);
       return {
         leftCol: clarifaiFace.left_col * width,
         topRow: clarifaiFace.top_row * height,
@@ -163,7 +163,7 @@ class App extends Component {
                const bottomRow = boundingBox.bottom_row.toFixed(3);
                const rightCol = boundingBox.right_col.toFixed(3);
                this.displayFaceBox((this.calculateFaceLocation(boundingBox)));
-               //console.log(this.calculateFaceLocation(boundingBox));
+               console.log(this.calculateFaceLocation(boundingBox));
                
    
                region.data.concepts.forEach(concept => {
