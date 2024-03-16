@@ -107,24 +107,38 @@ class App extends Component {
         init: false,
         input: '',
         imageUrl: '',
-        box: {}
+        box: []
       };
     }
 
     calculateFaceLocation = (data) => {
-      const clarifaiFace = data;
+      console.log(data);
       const image = document.getElementById('inputImage');
-      const width = Number(image.width);
-      //console.log(width);
-      const height = Number(image.height);
-      //console.log(height);
-      return {
-        leftCol: clarifaiFace.left_col * width,
-        topRow: clarifaiFace.top_row * height,
-        rightCol: width - (clarifaiFace.right_col * width),
-        bottomRow: height - (clarifaiFace.bottom_row * height)
+      let result = [];
+      if (Array.isArray(data)) {
+        data.forEach((item) => {
+          result.push(item.region_info.bounding_box);
+        });
+      } else {
+        this.setState((prev) => ({
+          ...prev,
+          hasError: true,
+        }));
       }
-    }
+      let box = [];
+      const width = Number(image.width);
+      const height = Number(image.height);
+      result.forEach((item) => {
+        box.push({
+          leftCol: item.left_col * width,
+          topRow: item.top_row * height,
+          rightCol: width - item.right_col * width,
+          bottomRow: height - item.bottom_row * height,
+        });
+      });
+      //console.log(width, height);
+      return box;
+    };
 
     displayFaceBox = (box) => {
       //console.log(box);
@@ -163,7 +177,7 @@ class App extends Component {
                const bottomRow = boundingBox.bottom_row.toFixed(3);
                const rightCol = boundingBox.right_col.toFixed(3);
                this.displayFaceBox((this.calculateFaceLocation(boundingBox)));
-               console.log(this.calculateFaceLocation(boundingBox));
+               //console.log(this.calculateFaceLocation(boundingBox));
                
    
                region.data.concepts.forEach(concept => {
@@ -171,7 +185,7 @@ class App extends Component {
                    const name = concept.name;
                    const value = concept.value.toFixed(4);  
    
-                   console.log(`${name}: ${value} BBox: ${topRow}, ${leftCol}, ${bottomRow}, ${rightCol}`);
+                   //console.log(`${name}: ${value} BBox: ${topRow}, ${leftCol}, ${bottomRow}, ${rightCol}`);
                    
                });
            });
