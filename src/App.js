@@ -57,10 +57,10 @@ const returnClarifaiRequestOptions = (imageURL) => {
     // Since you're making inferences outside your app's scope
     const USER_ID = '7u5tuh27v9pc1';       
     const APP_ID = 'my-first-application-urznkk';
-    // Change these to whatever model and image URL you want to use
+    //Change these to whatever model and image URL you want to use
     //const MODEL_ID = 'face-detection';
     //const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105';    
-    const IMAGE_URL = imageURL.imageUrl;
+    const IMAGE_URL = imageURL;
 
     const raw = JSON.stringify({
     "user_app_id": {
@@ -89,6 +89,7 @@ const requestOptions = {
 };
 
 return requestOptions
+
 }
 
 //class is defined with a lowercase c
@@ -110,16 +111,23 @@ class App extends Component {
       };
     }
 
-    // calculateFaceLocation = (data) => {
-    //   // const clarifaiFace = data;
-    //   // const image = document.getElementById('inputImage');
-    //   // const width = Number(image.width);
-    //   // const height = Number(image.height);
-    //   // console.log(width, height);
-    //   console.log('Is this getting called?');
-    // }
+    calculateFaceLocation = (data) => {
+      const clarifaiFace = data;
+      const image = document.getElementById('inputImage');
+      const width = Number(image.width);
+      console.log(width);
+      const height = Number(image.height);
+      console.log(height);
+      return {
+        leftCol: clarifaiFace.left_col * width,
+        topRow: clarifaiFace.top_row * height,
+        rightCol: width - (clarifaiFace.right_col * width),
+        bottomRow: height - (clarifaiFace.bottom_row * height)
+      }
+    }
 
     displayFaceBox = (box) => {
+      console.log(box);
       this.setState({box: box})
     }
   
@@ -141,10 +149,7 @@ class App extends Component {
     onButtonSubmit = () => {
        this.setState({ imageUrl: this.state.input })
 
-      //put the validation script into a function and then call the script 
-      const requestOptions = returnClarifaiRequestOptions(this.state.input);
-
-       fetch("https://api.clarifai.com/v2/models/" + "face-detection" + "/versions/" + "6dc7e46bc9124c5c8824be4822abe105" + "/outputs", requestOptions)
+       fetch("https://api.clarifai.com/v2/models/" + "face-detection" + "/versions/" + "6dc7e46bc9124c5c8824be4822abe105" + "/outputs", returnClarifaiRequestOptions(this.state.input))
        .then(response => response.json())
        .then(result => {
    
@@ -157,11 +162,14 @@ class App extends Component {
                const leftCol = boundingBox.left_col.toFixed(3);
                const bottomRow = boundingBox.bottom_row.toFixed(3);
                const rightCol = boundingBox.right_col.toFixed(3);
+               this.displayFaceBox((this.calculateFaceLocation(boundingBox)));
+               //console.log(this.calculateFaceLocation(boundingBox));
+               
    
                region.data.concepts.forEach(concept => {
                    // Accessing and rounding the concept value
                    const name = concept.name;
-                   const value = concept.value.toFixed(4);
+                   const value = concept.value.toFixed(4);  
    
                    console.log(`${name}: ${value} BBox: ${topRow}, ${leftCol}, ${bottomRow}, ${rightCol}`);
                    
@@ -173,6 +181,7 @@ class App extends Component {
     }
 
     //https://petapixel.com/assets/uploads/2011/02/averagefaces.jpg
+    //https://i.pinimg.com/736x/35/29/83/352983c7917b84e29b6c3e0e5e452ef0.jpg
     render() {
       return (
         <div className="App">
@@ -185,7 +194,8 @@ class App extends Component {
            onButtonSubmit={this.onButtonSubmit} 
            />
           <FaceRecognition
-          imageUrl={this.state.imageUrl} />
+          imageUrl={this.state.imageUrl}
+          box={this.state.box} />
         </div>
       );
     }

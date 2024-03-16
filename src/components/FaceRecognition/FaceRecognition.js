@@ -2,14 +2,15 @@ import React from 'react';
 import './FaceRecognition.css';
 
 
-const FaceRecognition = ({ imageUrl }) => {
+const FaceRecognition = ({ imageUrl, box }) => {
     // const imageURL = {imageUrl};
     // const outlineCoords = [];
 
     return (
-        <div className='center'>
+        <div className='center ma'>
+            <div className='absolute mt2'>
             <img width='500px' height='auto' id='inputImage' alt='faces' src={imageUrl} />
-           
+            <div className='bounding-box' style={{left: box.leftCol, top: box.topRow, right: box.rightCol, bottom: box.bottomRow}}></div>
             {/* {outlineCoords.map((coord, index) => (
                  console.log('in'),
             <div 
@@ -23,7 +24,7 @@ const FaceRecognition = ({ imageUrl }) => {
                 }}
             ></div>
         ))} */}
-
+            </div>
         </div>
     )
             
