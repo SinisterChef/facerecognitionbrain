@@ -6,7 +6,7 @@ import './ImageLinkForm.css';
 const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
     return (
         <div className='f3'>
-            <p className='white text-shadow'>This Magic Brain will detect faces in your pictures. Give it a try</p>
+            <p className='white text-shadow'>Dank Brain will detect faces in your pictures. Enter a image URL below.</p>
             <div className='center'>
                 <div className='pa4 br3 center form'>
                     <input type='text' className='f4 pa2 w-70 center' onChange={onInputChange} />

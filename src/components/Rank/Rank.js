@@ -5,10 +5,10 @@ const Rank = () => {
     return (
         <div>
             <div className='white f3 text-shadow'>
-                {'Kyle, Your current rank is...'}
+                {'How many faces are in the photo?'}
             </div>
             <div className='white f1 text-shadow'>
-                {'#5'}
+                {'0'}
             </div>
         </div>
     )

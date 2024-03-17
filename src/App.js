@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import './App.css';
-import Navigation from './components/Navigation/Navigation';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { Helmet } from 'react-helmet';
 import { loadAll } from "@tsparticles/all";
+
+const Title = 'Dank Brain';
 
 const particleOptions = {
   particles: {
@@ -157,10 +159,11 @@ class App extends Component {
     render() {
       return (
         <div className="App">
+          <Helmet>
+          <title>{ Title }</title>
+          </Helmet>
           {this.state.init && <Particles id="tsparticles" particlesLoaded={this.particlesLoaded} options={particleOptions} />}
-          <Navigation />
           <Logo />
-          <Rank />
           <ImageLinkForm
            onInputChange={this.onInputChange} 
            onButtonSubmit={this.onButtonSubmit} 
