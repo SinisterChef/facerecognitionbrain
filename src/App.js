@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import './App.css';
+import './bootstrap.min.css';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
-import Rank from './components/Rank/Rank';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { Helmet } from 'react-helmet';
 import { loadAll } from "@tsparticles/all";
