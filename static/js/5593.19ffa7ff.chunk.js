@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[5593],{5593:(n,e,i)=>{i.d(e,{ExportImagePlugin:()=>t});class t{constructor(n){this.id="export-image",this._engine=n}async getPlugin(n){const{ExportImageInstance:e}=await i.e(3249).then(i.bind(i,3249));return new e(n,this._engine)}loadOptions(){}needsPlugin(){return!0}}}}]);
+//# sourceMappingURL=5593.19ffa7ff.chunk.js.map

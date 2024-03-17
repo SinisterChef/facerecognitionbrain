@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[7148],{7148:(a,e,n)=>{n.d(e,{HeartDrawer:()=>r});class r{async draw(a){const{drawHeart:e}=await n.e(5236).then(n.bind(n,5236));e(a)}}}}]);
+//# sourceMappingURL=7148.0e6902f2.chunk.js.map

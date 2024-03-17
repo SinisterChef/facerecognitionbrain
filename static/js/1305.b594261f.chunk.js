@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[1305],{1305:(a,e,n)=>{async function i(a){let e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];const{TrailDrawer:i}=await n.e(3372).then(n.bind(n,3372));await a.addEffect("trail",new i,e)}n.d(e,{loadTrailEffect:()=>i})}}]);
+//# sourceMappingURL=1305.b594261f.chunk.js.map

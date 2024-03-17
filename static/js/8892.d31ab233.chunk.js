@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[8892],{8892:(n,a,e)=>{e.d(a,{loadHsvColorPlugin:()=>o});var i=e(4409);async function o(){const{HsvColorManager:n}=await e.e(4107).then(e.bind(e,4107));(0,i.a9)(new n)}}}]);
+//# sourceMappingURL=8892.d31ab233.chunk.js.map

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[5925],{5925:(e,i,n)=>{n.d(i,{loadEasingCubicPlugin:()=>a});var c=n(4409);async function a(){(0,c.nL)("ease-in-cubic",(e=>e**3)),(0,c.nL)("ease-out-cubic",(e=>1-(1-e)**3)),(0,c.nL)("ease-in-out-cubic",(e=>e<.5?4*e**3:1-(-2*e+2)**3/2)),await Promise.resolve()}}}]);
+//# sourceMappingURL=5925.7f031473.chunk.js.map

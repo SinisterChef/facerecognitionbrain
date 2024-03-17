@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[9980],{9980:(a,e,n)=>{n.d(e,{loadEasingQuartPlugin:()=>r});var i=n(4409);async function r(){(0,i.nL)("ease-in-quart",(a=>a**4)),(0,i.nL)("ease-out-quart",(a=>1-(1-a)**4)),(0,i.nL)("ease-in-out-quart",(a=>a<.5?8*a**4:1-(-2*a+2)**4/2)),await Promise.resolve()}}}]);
+//# sourceMappingURL=9980.69716520.chunk.js.map

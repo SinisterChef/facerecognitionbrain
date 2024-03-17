@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[5024],{5024:(t,e,n)=>{n.d(e,{drawStar:()=>i});const a=2,o={x:0,y:0};function i(t){var e;const{context:n,particle:i,radius:r}=t,c=i.sides,s=null!==(e=i.starInset)&&void 0!==e?e:a;n.moveTo(o.x,o.y-r);for(let a=0;a<c;a++)n.rotate(Math.PI/c),n.lineTo(o.x,o.y-r*s),n.rotate(Math.PI/c),n.lineTo(o.x,o.y-r)}}}]);
+//# sourceMappingURL=5024.120a76c6.chunk.js.map

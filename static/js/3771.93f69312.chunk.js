@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[3771],{3771:(a,n,e)=>{e.d(n,{DiamondDrawer:()=>i});class i{async draw(a){const{drawPath:n,paths:i}=await e.e(3819).then(e.bind(e,3819));n(a,i.diamond)}}}}]);
+//# sourceMappingURL=3771.93f69312.chunk.js.map

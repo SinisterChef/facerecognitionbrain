@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[4598],{4598:(n,e,i)=>{function a(n){var e;const{context:i,particle:a,radius:o}=n,c=a.shapeData;i.moveTo(-o,0),i.lineTo(o,0),i.lineCap=null!==(e=null===c||void 0===c?void 0:c.cap)&&void 0!==e?e:"butt"}i.d(e,{drawLine:()=>a})}}]);
+//# sourceMappingURL=4598.f923bfa4.chunk.js.map

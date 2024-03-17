@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[1297],{1297:(n,a,e)=>{e.d(a,{loadPolygonPath:()=>o});const t="polygonPathGenerator";async function o(n){let a=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];const{PolygonPathGenerator:o}=await e.e(4407).then(e.bind(e,4407));await n.addPathGenerator(t,new o,a)}}}]);
+//# sourceMappingURL=1297.60314e77.chunk.js.map

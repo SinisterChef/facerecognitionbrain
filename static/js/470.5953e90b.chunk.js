@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[470],{470:(t,e,a)=>{async function n(t){let e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await t.addParticleUpdater("tilt",(async t=>{const{TiltUpdater:e}=await a.e(6734).then(a.bind(a,6734));return new e(t)}),e)}a.d(e,{loadTiltUpdater:()=>n})}}]);
+//# sourceMappingURL=470.5953e90b.chunk.js.map

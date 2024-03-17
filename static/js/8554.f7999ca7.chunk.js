@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[8554],{8554:(e,a,n)=>{async function i(e){let a=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];const{CogDrawer:i}=await n.e(2676).then(n.bind(n,2676));await e.addShape("cog",new i,a)}n.d(a,{loadCogShape:()=>i})}}]);
+//# sourceMappingURL=8554.f7999ca7.chunk.js.map
