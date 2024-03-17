@@ -11,3 +11,11 @@
     width: 500px; 
     height: auto;
 }
+
+.face_description {
+    position: absolute;
+    color: #fff;
+    font-size: 1.25rem;
+    width: 100%;
+    text-align: center;
+}

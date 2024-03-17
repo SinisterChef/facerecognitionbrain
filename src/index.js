@@ -16,6 +16,12 @@ root.render(
   </React.StrictMode>
 );
 
+//validation checking
+//null value upon submit
+//404 server answer
+//How many faces are in the image
+
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
