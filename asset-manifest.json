@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/facerecognitionbrain/static/css/main.b9b782da.css",
-    "main.js": "/facerecognitionbrain/static/js/main.d9fb4f4a.js",
+    "main.css": "/facerecognitionbrain/static/css/main.3200b88b.css",
+    "main.js": "/facerecognitionbrain/static/js/main.366ac88b.js",
     "static/js/4603.52eb2609.chunk.js": "/facerecognitionbrain/static/js/4603.52eb2609.chunk.js",
     "static/js/3600.c4ac7f74.chunk.js": "/facerecognitionbrain/static/js/3600.c4ac7f74.chunk.js",
     "static/js/1704.6014cc10.chunk.js": "/facerecognitionbrain/static/js/1704.6014cc10.chunk.js",
@@ -229,10 +229,11 @@
     "static/js/1313.cc867dd9.chunk.js": "/facerecognitionbrain/static/js/1313.cc867dd9.chunk.js",
     "static/js/6221.20ce4139.chunk.js": "/facerecognitionbrain/static/js/6221.20ce4139.chunk.js",
     "static/js/6061.213ad63c.chunk.js": "/facerecognitionbrain/static/js/6061.213ad63c.chunk.js",
+    "static/media/k_bw_logo.png": "/facerecognitionbrain/static/media/k_bw_logo.64186cd3d8b21737c8b2.png",
     "static/media/brain_logo.svg": "/facerecognitionbrain/static/media/brain_logo.2e9706cf7a611d98fb41283fb7b3de73.svg",
     "index.html": "/facerecognitionbrain/index.html",
-    "main.b9b782da.css.map": "/facerecognitionbrain/static/css/main.b9b782da.css.map",
-    "main.d9fb4f4a.js.map": "/facerecognitionbrain/static/js/main.d9fb4f4a.js.map",
+    "main.3200b88b.css.map": "/facerecognitionbrain/static/css/main.3200b88b.css.map",
+    "main.366ac88b.js.map": "/facerecognitionbrain/static/js/main.366ac88b.js.map",
     "4603.52eb2609.chunk.js.map": "/facerecognitionbrain/static/js/4603.52eb2609.chunk.js.map",
     "3600.c4ac7f74.chunk.js.map": "/facerecognitionbrain/static/js/3600.c4ac7f74.chunk.js.map",
     "1704.6014cc10.chunk.js.map": "/facerecognitionbrain/static/js/1704.6014cc10.chunk.js.map",
@@ -462,7 +463,7 @@
     "6061.213ad63c.chunk.js.map": "/facerecognitionbrain/static/js/6061.213ad63c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b9b782da.css",
-    "static/js/main.d9fb4f4a.js"
+    "static/css/main.3200b88b.css",
+    "static/js/main.366ac88b.js"
   ]
 }
