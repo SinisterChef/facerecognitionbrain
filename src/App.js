@@ -6,7 +6,7 @@ import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 // import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { Helmet } from 'react-helmet';
-import { loadAll } from "@tsparticles/all";
+// import { loadAll } from "@tsparticles/all";
 
 const Title = 'Dank Brain';
 
@@ -136,14 +136,13 @@ class App extends Component {
     //Image Call = This is where imgeURL is called and sent to the compontent this is where the API call needs to be set also
     onButtonSubmit = () => {
        this.setState({ imageUrl: this.state.input })
-       let boundingBoxes = document.querySelectorAll("div.bounding-box");
 
-       fetch("https://api.clarifai.com/v2/models/" + "face-detection" + "/versions/" + "6dc7e46bc9124c5c8824be4822abe105" + "/outputs", returnClarifaiRequestOptions(this.state.input))
+       fetch("https://api.clarifai.com/v2/models/face-detection/versions/6dc7e46bc9124c5c8824be4822abe105/outputs", returnClarifaiRequestOptions(this.state.input))
        .then(response => response.json())
        .then(result => {
           console.log(result);
            const regions = result.outputs[0].data.regions;
-           if (regions != undefined) {
+           if (regions !== undefined) {
            let box = [];
            regions.forEach(region => {
                // Accessing and rounding the bounding box values

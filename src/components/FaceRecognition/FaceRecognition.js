@@ -1,8 +1,17 @@
 import React from 'react';
 import './FaceRecognition.css';
 
-//build a function that selects all bounding boxes
-//And deletes them and resets face_description
+
+const renderSwitch = (param) => {
+    switch(param.length) {
+        case 0 :
+            return `Doesn't look like there are any human faces in this image`;
+        case 1 :
+            return `There is probably ${param.length} face in this photo`;
+        default :
+            return `There are probably ${param.length} faces in this photo`;
+    }
+}
 
 const FaceRecognition = ({ imageUrl, box }) => {
     return (
@@ -25,16 +34,12 @@ const FaceRecognition = ({ imageUrl, box }) => {
                 ) : (
                     <div></div>
                 )}
-                {box.length ? (
+                {imageUrl ? (
                     <div id='face_description' className='face_description text-shadow'>
-                        {box.length > 1 ? (
-                            `There are probably ${box.length} faces in this photo`
-                        ) : (
-                            `There is probably ${box.length} face in this photo`
-                        )}
+                        {renderSwitch(box)}
                     </div>
                 ) : (
-                    <div></div>
+                    <div id='face_description' className='face_description text-shadow'></div>
                 )}
             </div>
         </div>
