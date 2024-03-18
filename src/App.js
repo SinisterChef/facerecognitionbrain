@@ -4,53 +4,53 @@ import './bootstrap.min.css';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
-import Particles, { initParticlesEngine } from "@tsparticles/react";
+// import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { Helmet } from 'react-helmet';
 import { loadAll } from "@tsparticles/all";
 
 const Title = 'Dank Brain';
 
-const particleOptions = {
-  particles: {
-      color: {
-          value: "#ffffff",
-      },
-      links: {
-          color: "#ffffff",
-          distance: 150,
-          enable: true,
-          opacity: 0.5,
-          width: 1,
-      },
-      move: {
-          direction: "none",
-          enable: true,
-          outModes: {
-              default: "bounce",
-          },
-          random: false,
-          speed: 3,
-          straight: false,
-      },
-      number: {
-          density: {
-              enable: true,
-              area: 200,
-          },
-          value: 50,
-      },
-      opacity: {
-          value: 0.5,
-      },
-      shape: {
-          type: "circle",
-      },
-      size: {
-          value: { min: 1, max: 5 },
-      },
-  },
-  detectRetina: true,
-}
+// const particleOptions = {
+//   particles: {
+//       color: {
+//           value: "#ffffff",
+//       },
+//       links: {
+//           color: "#ffffff",
+//           distance: 150,
+//           enable: true,
+//           opacity: 0.5,
+//           width: 1,
+//       },
+//       move: {
+//           direction: "none",
+//           enable: true,
+//           outModes: {
+//               default: "bounce",
+//           },
+//           random: false,
+//           speed: 3,
+//           straight: false,
+//       },
+//       number: {
+//           density: {
+//               enable: true,
+//               area: 200,
+//           },
+//           value: 50,
+//       },
+//       opacity: {
+//           value: 0.5,
+//       },
+//       shape: {
+//           type: "circle",
+//       },
+//       size: {
+//           value: { min: 1, max: 5 },
+//       },
+//   },
+//   detectRetina: false,
+// }
 
 const returnClarifaiRequestOptions = (imageURL) => {
     const PAT = '5d74e64a813e4adcbced4e119706b229';
@@ -120,11 +120,11 @@ class App extends Component {
     }
   
     componentDidMount() {
-      initParticlesEngine(async (engine) => {
-        await loadAll(engine);
-      }).then(() => {
-        this.setState({ init: true });
-      });
+      // initParticlesEngine(async (engine) => {
+      //   await loadAll(engine);
+      // }).then(() => {
+      //   this.setState({ init: true });
+      // });
     }
 
     //gets called on an event so it gets passed the event
@@ -159,7 +159,7 @@ class App extends Component {
           <Helmet>
           <title>{ Title }</title>
           </Helmet>
-          {this.state.init && <Particles id="tsparticles" particlesLoaded={this.particlesLoaded} options={particleOptions} />}
+          {/* {this.state.init && <Particles id="tsparticles" particlesLoaded={this.particlesLoaded} options={particleOptions} />} */}
           <Logo />
           <ImageLinkForm
            onInputChange={this.onInputChange} 
