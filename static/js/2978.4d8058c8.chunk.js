@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[2978],{2978:(e,a,n)=>{n.d(a,{SquareDrawer:()=>r});class r{async draw(e){const{drawSquare:a}=await n.e(5275).then(n.bind(n,5275));a(e)}getSidesCount(){return 4}}}}]);
-//# sourceMappingURL=2978.4d8058c8.chunk.js.map

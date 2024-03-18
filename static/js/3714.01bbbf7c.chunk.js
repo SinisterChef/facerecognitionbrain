@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[3714],{3714:(e,a,n)=>{async function t(e){let a=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await e.addParticleUpdater("roll",(async()=>{const{RollUpdater:e}=await n.e(4410).then(n.bind(n,4410));return new e}),a)}n.d(a,{loadRollUpdater:()=>t})}}]);
-//# sourceMappingURL=3714.01bbbf7c.chunk.js.map

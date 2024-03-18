@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[596],{596:(e,n,t)=>{async function a(e){let n=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await e.addInteractor("externalParticle",(async e=>{const{InteractivityParticleMaker:n}=await t.e(2367).then(t.bind(t,2367));return new n(e)}),n)}t.d(n,{loadExternalParticleInteraction:()=>a})}}]);
-//# sourceMappingURL=596.92e26592.chunk.js.map

@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[1226],{1226:(a,t,e)=>{e.d(t,{PathDrawer:()=>r});var n=e(4409);class r{async draw(a){const{context:t,particle:n,radius:r}=a;if(!n.pathData)return;const{drawPath:c}=await e.e(2739).then(e.bind(e,2739));c(t,r,n.pathData)}async particleInit(a,t){const e=t.shapeData;e&&(t.pathData=(0,n.zw)({},e),await Promise.resolve())}}}}]);
-//# sourceMappingURL=1226.ff948611.chunk.js.map

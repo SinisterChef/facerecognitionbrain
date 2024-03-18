@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[5283],{5283:(n,i,e)=>{async function a(n){let i=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];const{SoundsPlugin:a}=await e.e(6932).then(e.bind(e,6932));await n.addPlugin(new a(n),i)}e.d(i,{loadSoundsPlugin:()=>a})}}]);
-//# sourceMappingURL=5283.a968b23c.chunk.js.map

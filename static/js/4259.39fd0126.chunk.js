@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[4259],{4259:(e,n,a)=>{async function t(e){let n=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];const{RoundedRectDrawer:t}=await a.e(5653).then(a.bind(a,5653));await e.addShape("rounded-rect",new t,n)}a.d(n,{loadRoundedRectShape:()=>t})}}]);
-//# sourceMappingURL=4259.39fd0126.chunk.js.map

@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[3681],{3681:(a,e,n)=>{n.d(e,{loadSVGPath:()=>i});const t="svgPathGenerator";async function i(a){let e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];const{SVGPathGenerator:i}=await n.e(2011).then(n.bind(n,2011));await a.addPathGenerator(t,new i,e)}}}]);
-//# sourceMappingURL=3681.f6622a23.chunk.js.map

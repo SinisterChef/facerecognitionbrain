@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[2630],{2630:(a,e,n)=>{n.d(e,{loadZigZagPath:()=>i});const t="zigZagPathGenerator";async function i(a){let e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];const{ZigZagPathGenerator:i}=await n.e(7726).then(n.bind(n,7726));await a.addPathGenerator(t,new i,e)}}}]);
-//# sourceMappingURL=2630.dd32fc26.chunk.js.map

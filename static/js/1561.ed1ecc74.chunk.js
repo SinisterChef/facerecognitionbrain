@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[1561],{1561:(e,n,a)=>{async function t(e){let n=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await e.addParticleUpdater("twinkle",(async()=>{const{TwinkleUpdater:e}=await a.e(9480).then(a.bind(a,9480));return new e}),n)}a.d(n,{loadTwinkleUpdater:()=>t})}}]);
-//# sourceMappingURL=1561.ed1ecc74.chunk.js.map

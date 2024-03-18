@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[4845],{4845:(e,i,o)=>{o.d(i,{bounce:()=>l});var n=o(4409);const c=e=>{void 0===e.collisionMaxSpeed&&(e.collisionMaxSpeed=(0,n.VG)(e.options.collisions.maxSpeed)),e.velocity.length>e.collisionMaxSpeed&&(e.velocity.length=e.collisionMaxSpeed)};function l(e,i){(0,n.pE)((0,n.Tg)(e),(0,n.Tg)(i)),c(e),c(i)}}}]);
-//# sourceMappingURL=4845.af96cac0.chunk.js.map

@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[8991],{8991:(n,e,o)=>{async function a(n){let e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];const{RoundedPolygonDrawer:a}=await o.e(1283).then(o.bind(o,1283));await n.addShape("rounded-polygon",new a,e)}o.d(e,{loadRoundedPolygonShape:()=>a})}}]);
-//# sourceMappingURL=8991.70fb01d5.chunk.js.map

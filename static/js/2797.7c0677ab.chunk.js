@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[2797],{2797:(n,e,t)=>{t.d(e,{ExportJSONPlugin:()=>i});class i{constructor(n){this.id="export-json",this._engine=n}async getPlugin(n){const{ExportJSONInstance:e}=await t.e(3317).then(t.bind(t,3317));return new e(n,this._engine)}loadOptions(){}needsPlugin(){return!0}}}}]);
-//# sourceMappingURL=2797.7c0677ab.chunk.js.map

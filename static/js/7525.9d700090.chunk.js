@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[7525],{7525:(a,e,n)=>{async function t(a){var e;let t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];const i=a,{EmittersCanvasShapeGenerator:r}=await n.e(3318).then(n.bind(n,3318));null===(e=i.addEmitterShapeGenerator)||void 0===e||e.call(i,"canvas",new r),await i.refresh(t)}n.d(e,{loadEmittersShapeCanvas:()=>t})}}]);
-//# sourceMappingURL=7525.9d700090.chunk.js.map

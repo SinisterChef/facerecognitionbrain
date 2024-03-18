@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[7348],{7348:(n,a,i)=>{async function e(n){let a=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];const{CanvasMaskPlugin:e}=await i.e(723).then(i.bind(i,723));await n.addPlugin(new e,a)}i.d(a,{loadCanvasMaskPlugin:()=>e})}}]);
-//# sourceMappingURL=7348.7f1c4498.chunk.js.map

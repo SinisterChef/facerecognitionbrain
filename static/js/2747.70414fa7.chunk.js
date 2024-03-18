@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[2747],{2747:(e,t,a)=>{async function n(e){let t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await e.addParticleUpdater("destroy",(async t=>{const{DestroyUpdater:n}=await a.e(934).then(a.bind(a,934));return new n(e,t)}),t)}a.d(t,{loadDestroyUpdater:()=>n})}}]);
-//# sourceMappingURL=2747.70414fa7.chunk.js.map

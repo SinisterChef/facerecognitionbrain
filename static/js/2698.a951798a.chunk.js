@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[2698],{2698:(e,n,a)=>{a.d(n,{loadCurlNoisePath:()=>t});const i="curlNoise";async function t(e){let n=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];const{CurlNoiseGenerator:t}=await Promise.all([a.e(6061),a.e(7949)]).then(a.bind(a,7949));await e.addPathGenerator(i,new t,n)}}}]);
-//# sourceMappingURL=2698.a951798a.chunk.js.map

@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[1212],{1212:(e,a,n)=>{async function t(e){let a=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await e.addParticleUpdater("wobble",(async e=>{const{WobbleUpdater:a}=await n.e(3566).then(n.bind(n,3566));return new a(e)}),a)}n.d(a,{loadWobbleUpdater:()=>t})}}]);
-//# sourceMappingURL=1212.ae8b2a3c.chunk.js.map

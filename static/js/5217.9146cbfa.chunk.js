@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[5217],{5217:(n,e,i)=>{i.d(e,{ExportVideoPlugin:()=>t});class t{constructor(n){this.id="export-video",this._engine=n}async getPlugin(n){const{ExportVideoInstance:e}=await i.e(4217).then(i.bind(i,4217));return new e(n,this._engine)}loadOptions(){}needsPlugin(){return!0}}}}]);
-//# sourceMappingURL=5217.9146cbfa.chunk.js.map

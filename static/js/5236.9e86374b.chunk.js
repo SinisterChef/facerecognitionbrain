@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[5236],{5236:(a,e,r)=>{r.d(e,{drawHeart:()=>c});const o=.5,u=2;function c(a){const{context:e,radius:r}=a,c=r*u,i=r*o,t=r+i,n=-r,d=-r;e.moveTo(n,d+i),e.quadraticCurveTo(n,d,n+i,d),e.quadraticCurveTo(n+r,d,n+r,d+i),e.quadraticCurveTo(n+r,d,n+t,d),e.quadraticCurveTo(n+c,d,n+c,d+i),e.quadraticCurveTo(n+c,d+r,n+t,d+t),e.lineTo(n+r,d+c),e.lineTo(n+i,d+t),e.quadraticCurveTo(n,d+r,n,d+i)}}}]);
-//# sourceMappingURL=5236.9e86374b.chunk.js.map

@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[5886],{5886:(e,a,t)=>{async function n(e){var a;let n=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];const i=e,{EmittersPathShapeGenerator:r}=await t.e(8190).then(t.bind(t,8190));null===(a=i.addEmitterShapeGenerator)||void 0===a||a.call(i,"path",new r),await i.refresh(n)}t.d(a,{loadEmittersShapePath:()=>n})}}]);
-//# sourceMappingURL=5886.af50a019.chunk.js.map

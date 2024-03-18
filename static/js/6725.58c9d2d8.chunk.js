@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[6725],{6725:(t,n,a)=>{async function e(t){let n=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await t.addInteractor("externalAttract",(async n=>{const{Attractor:e}=await a.e(9618).then(a.bind(a,9618));return new e(t,n)}),n)}a.d(n,{loadExternalAttractInteraction:()=>e})}}]);
-//# sourceMappingURL=6725.58c9d2d8.chunk.js.map

@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkfacerecognitionbrain=self.webpackChunkfacerecognitionbrain||[]).push([[8010],{8010:(n,e,t)=>{async function i(n){let e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];const{InfectionPlugin:i}=await t.e(2330).then(t.bind(t,2330)),a=new i;await n.addPlugin(a,e),await n.addInteractor("particlesInfection",(async n=>{const{ParticlesInfecter:e}=await t.e(5759).then(t.bind(t,5759));return new e(n)}),e)}t.d(e,{loadInfectionPlugin:()=>i})}}]);
-//# sourceMappingURL=8010.389868fa.chunk.js.map
