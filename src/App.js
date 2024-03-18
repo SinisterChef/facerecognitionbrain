@@ -152,7 +152,7 @@ class App extends Component {
            });
            this.displayFaceBox((this.calculateFaceLocation(box)));
           } else {
-            console.log('nothing ion here');
+            //resetting box state if API call returns undefined assuming the image did not have any faces so the DOM will be cleaned up in the FaceRecognition.js
             this.setState({ box: [] })
           }
         })
