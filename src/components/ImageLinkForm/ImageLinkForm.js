@@ -1,7 +1,6 @@
 import React from 'react';
 import './ImageLinkForm.css';
 
-
 //destructing the prop so we don't need to use props.onInputChange everytime its just onInputChange
 const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
     return (
