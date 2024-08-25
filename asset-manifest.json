@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/facerecognitionbrain/static/css/main.ed91964b.css",
-    "main.js": "/facerecognitionbrain/static/js/main.79e6d18b.js",
+    "main.css": "/facerecognitionbrain/static/css/main.c4ea8aa1.css",
+    "main.js": "/facerecognitionbrain/static/js/main.46c8bbcc.js",
     "static/js/453.bd0025ea.chunk.js": "/facerecognitionbrain/static/js/453.bd0025ea.chunk.js",
     "static/media/k_bw_logo.png": "/facerecognitionbrain/static/media/k_bw_logo.64186cd3d8b21737c8b2.png",
     "static/media/brain_logo.svg": "/facerecognitionbrain/static/media/brain_logo.2e9706cf7a611d98fb41283fb7b3de73.svg",
     "index.html": "/facerecognitionbrain/index.html",
-    "main.ed91964b.css.map": "/facerecognitionbrain/static/css/main.ed91964b.css.map",
-    "main.79e6d18b.js.map": "/facerecognitionbrain/static/js/main.79e6d18b.js.map",
+    "main.c4ea8aa1.css.map": "/facerecognitionbrain/static/css/main.c4ea8aa1.css.map",
+    "main.46c8bbcc.js.map": "/facerecognitionbrain/static/js/main.46c8bbcc.js.map",
     "453.bd0025ea.chunk.js.map": "/facerecognitionbrain/static/js/453.bd0025ea.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed91964b.css",
-    "static/js/main.79e6d18b.js"
+    "static/css/main.c4ea8aa1.css",
+    "static/js/main.46c8bbcc.js"
   ]
 }
