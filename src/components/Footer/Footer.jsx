@@ -31,7 +31,7 @@ const Footer = () => {
                     <input type="hidden" name="_subject" id="email-subject" value="Portfolio Contact Submission"></input>
                 </fieldset>
                 <button className="btn btn-outline-light" type="submit" value="Get in Touch!">
-                    <i className="fa-solid fa-paper-plane"></i>
+                    <i className="fa-solid fa-paper-plane mr-3"></i>
                     Get in Touch!
                 </button>
             </form>
