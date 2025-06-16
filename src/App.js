@@ -8,42 +8,6 @@ import { Helmet } from 'react-helmet';
 
 const Title = 'Dank Brain';
 
-const returnClarifaiRequestOptions = (imageURL) => {
-    const PAT = '5d74e64a813e4adcbced4e119706b229';
-    const USER_ID = '7u5tuh27v9pc1';       
-    const APP_ID = 'my-first-application-urznkk';
-    const IMAGE_URL = imageURL;
-
-    const raw = JSON.stringify({
-    "user_app_id": {
-        "user_id": USER_ID,
-        "app_id": APP_ID
-    },
-    "inputs": [
-        {
-            "data": {
-                "image": {
-                    "url": IMAGE_URL
-                    // "base64": IMAGE_BYTES_STRING
-                }
-            }
-        }
-    ]
-});
-
-const requestOptions = {
-    method: 'POST',
-    headers: {
-        'Accept': 'application/json',
-        'Authorization': 'Key ' + PAT
-    },
-    body: raw
-};
-
-return requestOptions
-
-}
-
 class App extends Component {
     constructor(props) {
       super(props);
@@ -82,7 +46,11 @@ class App extends Component {
     onButtonSubmit = () => {
        this.setState({ imageUrl: this.state.input })
 
-       fetch("https://api.clarifai.com/v2/models/face-detection/versions/6dc7e46bc9124c5c8824be4822abe105/outputs", returnClarifaiRequestOptions(this.state.input))
+        fetch("https://clarifai-proxy-eb01.onrender.com/clarifai", {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ imageUrl: this.state.input })
+        })
        .then(response => response.json())
        .then(result => {
           console.log(result);
