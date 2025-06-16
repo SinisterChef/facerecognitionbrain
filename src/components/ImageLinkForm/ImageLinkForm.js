@@ -18,6 +18,7 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
                     <button className='w-30 f4 link ph3 pv2 dib white bg-light-purple' onClick={onButtonSubmit}>Detect</button>
                 </div>
             </div>
+            <p className="text-white text-shadow fs-6 col-6 offset-3">*Clarifai changed their CORS policy. API requests are now handled through a free-tier reverse proxy server hosted on Render.com. Requests are a bit slower, and the first request may take up to a minute to respond.</p>
         </div>
     )
 }

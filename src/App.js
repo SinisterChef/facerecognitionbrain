@@ -46,6 +46,7 @@ class App extends Component {
     onButtonSubmit = () => {
        this.setState({ imageUrl: this.state.input })
 
+        //Clarifai changed their CORS policy, the below server proxy is setup to handle calrifai server calls and has all our info in a .env on the server
         fetch("https://clarifai-proxy-eb01.onrender.com/clarifai", {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
